@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" stylesheets="@../styles/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
+    <children>
+        <Button fx:id="button" layoutX="241.0" layoutY="161.0" onAction="#handleButtonAction" text="Cancelar" />
+        <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="44.0" lineSpacing="2.0" minHeight="16" minWidth="69" prefHeight="89.0" prefWidth="295.0" text="00:00">
+         
+        </Label>      
+    </children>
+
+</AnchorPane>
