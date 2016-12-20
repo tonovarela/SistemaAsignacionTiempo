@@ -8,8 +8,6 @@ package com.SAT.Clases;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.URL;
-import java.net.URLConnection;
 import java.net.UnknownHostException;
 
 /**
