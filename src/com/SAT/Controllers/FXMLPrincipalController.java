@@ -1,6 +1,7 @@
 
 package com.SAT.Controllers;
 
+import com.SAT.Clases.Contexto;
 import com.SAT.Clases.Reloj;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,12 +33,15 @@ public class FXMLPrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        reloj= new Reloj(150);          
-        label.textProperty().bind(reloj.TiempoLabel);
-        reloj.iniciarReloj();
-      
-        
-        
+        Contexto contexto=Contexto.getInstance();        
+        reloj=contexto.getReloj();        
+        reloj.IniciaCuentaRegresiva(120);
+       label.textProperty().bind(reloj.TiempoLabel);
+
+
+
+
+            
         
     }    
     

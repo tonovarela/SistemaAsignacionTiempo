@@ -20,12 +20,10 @@ public class Reloj {
     public StringProperty TiempoLabel;
     Timeline timeline;
 
-    public Reloj(int totalSegundos) {
-        TiempoLabel = new SimpleStringProperty();
-        this._minutos = totalSegundos / 60;
-        this._segundos = totalSegundos % 60;
-        this._totalRestante = totalSegundos;
-        timeline = new Timeline();
+
+    public Reloj() {
+        
+      timeline = new Timeline();
         KeyFrame k = new KeyFrame(Duration.seconds(1), (e) -> {
             cuentaRegresiva();
         });
@@ -33,6 +31,15 @@ public class Reloj {
         timeline.setCycleCount(Animation.INDEFINITE);
     }
 
+    
+    public void IniciaCuentaRegresiva(int totalSegundos) {
+        TiempoLabel = new SimpleStringProperty();
+        this._minutos = totalSegundos / 60;
+        this._segundos = totalSegundos % 60;
+        this._totalRestante = totalSegundos;
+        timeline.play();
+        
+    }
     private void cuentaRegresiva() {
 
         if (this._minutos == 0 && this._segundos == 0) {
@@ -52,10 +59,7 @@ public class Reloj {
 
     }
 
-    public void iniciarReloj() {
-        timeline.play();
-    }
-
+   
     public void detenerReloj() {
         timeline.stop();
     }
