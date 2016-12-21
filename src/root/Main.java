@@ -7,6 +7,7 @@ package root;
  */
 
 
+import com.SAT.Clases.MoveMouseListener;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
@@ -36,15 +37,19 @@ public class Main extends Application {
       scene.setFill(Color.TRANSPARENT);
 //        stage.setScene(scene);
 //        stage.show();
+
+       
         JFrame frame = new JFrame();
         frame.setUndecorated(true);
         frame.setType(Window.Type.UTILITY);
         JFXPanel main= new JFXPanel();
         frame.getContentPane().add(main);       
-                
+//        MoveMouseListener mml = new MoveMouseListener(main);
+//        main.addMouseListener(mml);
+//        main.addMouseMotionListener(mml);
         main.setScene(scene);
         frame.pack();  
-       frame.setBackground(new  java.awt.Color(255, 255, 255, 50));
+       frame.setBackground(new  java.awt.Color(0, 0, 0, 50));
         frame.setLocation(width-330, 0);
         frame.setVisible(true);
         

@@ -1,5 +1,6 @@
-
 package com.SAT.Clases;
+
+import java.util.TimerTask;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,34 +17,29 @@ public class Reloj {
 
     private int _segundos;
     private int _minutos;
-    private int _totalRestante;
-    public StringProperty TiempoLabel;
-    Timeline timeline;
+    private int _tiempoRestante;
 
+  
+    public StringProperty TiempoLabel;
+    private Timeline _timeline;
 
     public Reloj() {
-        
-      timeline = new Timeline();
+        _timeline = new Timeline();
+        TiempoLabel = new SimpleStringProperty();
         KeyFrame k = new KeyFrame(Duration.seconds(1), (e) -> {
             cuentaRegresiva();
         });
-        timeline.getKeyFrames().add(k);
-        timeline.setCycleCount(Animation.INDEFINITE);
+        _timeline.getKeyFrames().add(k);
+        _timeline.setCycleCount(Animation.INDEFINITE);
     }
-
     
-    public void IniciaCuentaRegresiva(int totalSegundos) {
-        TiempoLabel = new SimpleStringProperty();
-        this._minutos = totalSegundos / 60;
-        this._segundos = totalSegundos % 60;
-        this._totalRestante = totalSegundos;
-        timeline.play();
-        
+      public int getTiempoRestante() {
+        return _tiempoRestante;
     }
-    private void cuentaRegresiva() {
 
+    public void cuentaRegresiva() {
         if (this._minutos == 0 && this._segundos == 0) {
-            this.timeline.stop();
+            this._timeline.stop();
             Platform.exit();
             System.exit(0);
         } else {
@@ -52,16 +48,23 @@ public class Reloj {
                 this._minutos--;
             } else {
                 this._segundos--;
-                this._totalRestante--;
+                this._tiempoRestante--;
             }
-            TiempoLabel.setValue(String.format("%02d:%02d", this._minutos, this._segundos));                        
+            TiempoLabel.setValue(String.format("%02d:%02d", this._minutos, this._segundos));
         }
 
     }
 
-   
+    public void setTiempo(int totalSegundos) {
+        this._minutos = totalSegundos / 60;
+        this._segundos = totalSegundos % 60;
+        this._tiempoRestante = totalSegundos;
+        _timeline.play();
+
+    }
+
     public void detenerReloj() {
-        timeline.stop();
+        _timeline.stop();
     }
 
 }
