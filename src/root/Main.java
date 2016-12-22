@@ -29,12 +29,12 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
+//        Parent renovarTiempo=FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
+//        Parent MensajeChat=FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
         Dimension dim= Toolkit.getDefaultToolkit().getScreenSize();
-        int width= dim.width;
-        
-        Scene scene = new Scene(root); 
-        
-      scene.setFill(Color.TRANSPARENT);
+        int width= dim.width;        
+        Scene scene = new Scene(root);         
+        scene.setFill(Color.TRANSPARENT);
 //        stage.setScene(scene);
 //        stage.show();
 

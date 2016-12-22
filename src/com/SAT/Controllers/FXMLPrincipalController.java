@@ -39,9 +39,10 @@ public class FXMLPrincipalController implements Initializable {
         Contexto contexto = Contexto.getInstance();
         Reloj reloj = contexto.getReloj();
         reloj.setTiempo(40);
+        
         label.textProperty().bind(reloj.TiempoLabel);
-        Centinela centinela = new Centinela();
-
+        Centinela centinela = contexto.getCentinela();
+        
         Timeline _timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (e) -> {
                     
