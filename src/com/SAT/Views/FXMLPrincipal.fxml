@@ -9,12 +9,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" stylesheets="@../styles/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="165.0" prefWidth="286.0" stylesheets="@../styles/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
     <children>
-        <Button fx:id="button" layoutX="241.0" layoutY="161.0" onAction="#handleButtonAction" text="Cancelar" />
-        <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="44.0" lineSpacing="2.0" minHeight="16" minWidth="69" prefHeight="89.0" prefWidth="295.0" text="00:00">
-         
-        </Label>      
+      <Label fx:id="Tiempo"  layoutX="18.0" layoutY="28.0" prefHeight="99.0" prefWidth="226.0" text="0:00"  />      
+      <Button layoutX="203.0" layoutY="127.0" mnemonicParsing="false" text="Cancelar"  onAction="#CancelarBtnAction"/>      
     </children>
 
 </AnchorPane>

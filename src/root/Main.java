@@ -5,9 +5,8 @@ package root;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import com.SAT.Clases.MoveMouseListener;
+import com.SAT.Clases.StageModal;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
@@ -25,37 +24,31 @@ import javax.swing.JFrame;
  * @author tonovarela
  */
 public class Main extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
-//        Parent renovarTiempo=FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
-//        Parent MensajeChat=FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
-        Dimension dim= Toolkit.getDefaultToolkit().getScreenSize();
-        int width= dim.width;        
-        Scene scene = new Scene(root);         
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = dim.width;
+        Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
 //        stage.setScene(scene);
 //        stage.show();
 
-       
         JFrame frame = new JFrame();
         frame.setUndecorated(true);
         frame.setType(Window.Type.UTILITY);
-        JFXPanel main= new JFXPanel();
-        frame.getContentPane().add(main);       
+        JFXPanel main = new JFXPanel();
+        frame.getContentPane().add(main);
 //        MoveMouseListener mml = new MoveMouseListener(main);
 //        main.addMouseListener(mml);
 //        main.addMouseMotionListener(mml);
         main.setScene(scene);
-        frame.pack();  
-       frame.setBackground(new  java.awt.Color(0, 0, 0, 50));
-        frame.setLocation(width-330, 0);
+        frame.pack();
+        frame.setBackground(new java.awt.Color(0, 0, 0, 50));
+        frame.setLocation(width - 330, 0);
         frame.setVisible(true);
-        
-        
-        
-        
+
     }
 
     /**
@@ -64,5 +57,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

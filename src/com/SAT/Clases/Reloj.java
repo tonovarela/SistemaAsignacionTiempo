@@ -1,6 +1,5 @@
 package com.SAT.Clases;
 
-import java.util.TimerTask;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -15,12 +14,9 @@ import javafx.util.Duration;
  */
 public class Reloj {
 
-    private int _segundos;
-    private int _minutos;
-    private int _tiempoRestante;
-
-  
     public StringProperty TiempoLabel;
+    private int _segundos;
+    private int _minutos;        
     private Timeline _timeline;
 
     public Reloj() {
@@ -32,9 +28,9 @@ public class Reloj {
         _timeline.getKeyFrames().add(k);
         _timeline.setCycleCount(Animation.INDEFINITE);
     }
-    
-      public int getTiempoRestante() {
-        return _tiempoRestante;
+
+    public int getTiempoRestante() {
+        return this._minutos * 60 + this._segundos;
     }
 
     public void cuentaRegresiva() {
@@ -47,8 +43,7 @@ public class Reloj {
                 this._segundos = 59;
                 this._minutos--;
             } else {
-                this._segundos--;
-                this._tiempoRestante--;
+                this._segundos--;                
             }
             TiempoLabel.setValue(String.format("%02d:%02d", this._minutos, this._segundos));
         }
@@ -57,8 +52,7 @@ public class Reloj {
 
     public void setTiempo(int totalSegundos) {
         this._minutos = totalSegundos / 60;
-        this._segundos = totalSegundos % 60;
-        this._tiempoRestante = totalSegundos;
+        this._segundos = totalSegundos % 60;        
         _timeline.play();
 
     }

@@ -7,15 +7,32 @@
     src: url(fonts/Lato-Regular.ttf);
 }
 
+#labelCancelarTiempo{
+        -fx-font:30px "Roboto" ;                       
+}
+
 #AnchorPane{
    -fx-border-width: 2px;   
    -fx-background-color: transparent;
     
 }
-
-#label{
+#Tiempo{
     -fx-font:68px "Lato" ;                       
-    -fx-text-fill: #3992f7;         
+    -fx-text-fill: #3992f7;
+    -fx-alignment: CENTER;   
+}
+
+#labelRenovarTiempo{    
+    -fx-font:30px "Roboto" ;                       
+}
+#combo{
+    -fx-font:15px "Roboto" ;                       
+}
+
+
+Button{
+ -fx-font: "Roboto" ;                          
+ 
 }
 
 

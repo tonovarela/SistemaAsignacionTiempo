@@ -16,6 +16,7 @@ public class StageModal extends Stage {
 
     public StageModal() {
        this.initStyle(StageStyle.UNDECORATED);
+       this.setAlwaysOnTop(true);
     }
     
     
