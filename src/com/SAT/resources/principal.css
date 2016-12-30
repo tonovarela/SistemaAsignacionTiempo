@@ -1,0 +1,73 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: LatoBold;
+    src: url(Lato-Bold.ttf);
+}
+@font-face {
+    font-family: Lato;
+    src: url(Lato-Regular.ttf);
+}
+
+
+#labelCancelarTiempo{
+    -fx-font:30px "Roboto" ;                       
+}
+
+#AnchorPane{
+    -fx-border-width: 2px;   
+    -fx-background-color: transparent;
+
+}
+#Tiempo{
+    -fx-font:68px "Lato" ;                       
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;   
+}
+
+#labelRenovarTiempo{    
+    -fx-font:30px "Roboto" ;                       
+}
+#combo{
+    -fx-font:15px "Roboto" ;                       
+}
+
+
+
+
+#panel{
+    -fx-background-color: rgba(255, 255, 255,0.9);
+/*       -fx-background-color: rgba(39, 44, 50,0.7);*/
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+
+}
+
+
+
+Button{
+    /*    -fx-border-radius: 12px;*/
+    -fx-font-family:"Lato";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;        
+/*     -fx-text-fill: #fff;*/
+}
+
+#ButtonAceptar{
+    
+/*     -fx-background-color: #337ab7;
+     -fx-border-color: #2e6da4;*/
+}
+#ButtonCancelar{
+/*    -fx-background-color: #d9534f;    
+    -fx-border-color: #d43f3a;*/
+    
+}
+
+
+#user{
+    -fx-font-size:20px
+}
+

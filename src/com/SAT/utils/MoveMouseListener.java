@@ -1,5 +1,5 @@
 
-package com.SAT.Clases;
+package com.SAT.utils;
 
 import java.awt.Container;
 import java.awt.Point;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.SAT.Clases;
+package com.SAT.utils;
 
 import com.SAT.Model.TiempoARenovar;
 import javafx.util.StringConverter;

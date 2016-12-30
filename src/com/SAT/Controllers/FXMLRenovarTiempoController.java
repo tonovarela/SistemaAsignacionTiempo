@@ -1,7 +1,7 @@
 package com.SAT.Controllers;
 
 import com.SAT.Clases.Contexto;
-import com.SAT.Clases.ConverterStringTiempo;
+import com.SAT.utils.ConverterStringTiempo;
 import com.SAT.Model.TiempoARenovar;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +19,7 @@ public class FXMLRenovarTiempoController implements Initializable {
     @FXML
     private ComboBox<TiempoARenovar> combo;
     @FXML
-    private Button btnAgregarTiempo;
+    private Button ButtonAceptar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -46,7 +46,7 @@ public class FXMLRenovarTiempoController implements Initializable {
     
     @FXML
     private void HabilitarBtnAgregarTiempo(ActionEvent event) {
-        btnAgregarTiempo.setDisable(false);
+       ButtonAceptar.setDisable(false);
     }
     
 }

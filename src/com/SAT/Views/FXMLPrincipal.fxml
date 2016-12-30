@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
+<?import de.jensd.fx.glyphs.materialdesign.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import 
+    javafx.scene.text.*
+    <?import javafx.geometry.*?>
+    <?import java.lang.*?>
+    <?import java.util.*?>
+    <?import javafx.scene.*?>
+    <?import javafx.scene.control.*?>
+    <?import javafx.scene.layout.*?>
+    <?import de.jensd.fx.glyphs.fontawesome.*?>
+    <?import com.SAT.utils.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="165.0" prefWidth="286.0" stylesheets="@../styles/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
-    <children>
-      <Label fx:id="Tiempo"  layoutX="18.0" layoutY="28.0" prefHeight="99.0" prefWidth="226.0" text="0:00"  />      
-      <Button layoutX="203.0" layoutY="127.0" mnemonicParsing="false" text="Cancelar"  onAction="#CancelarBtnAction"/>      
-    </children>
 
-</AnchorPane>
+
+
+    <AnchorPane id="AnchorPane" prefHeight="165.0" prefWidth="286.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
+        <children>      
+            
+   
+            <Pane fx:id="panel" prefHeight="168.0" prefWidth="287.0">
+                <children>
+                   <GaugeControl fx:id="gauge" layoutX="56.0" layoutY="6.0" prefHeight="126.0" prefWidth="176.0"/>
+<!--                    <VBox fx:id="gauge" layoutX="56.0" layoutY="6.0" prefHeight="126.0" prefWidth="176.0" />         -->
+                    <Button layoutX="186.0" layoutY="135.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="26.0" prefWidth="97.0" text="Cancelar" textAlignment="RIGHT">                                               
+                        <graphic>
+                            <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
+                        </graphic>
+                        <font>
+                            <Font name="System Bold" size="3.0" />
+                        </font>
+                    </Button>
+                    <MaterialDesignIcon fx:id="StatusNet" glyphName="ETHERNET_CABLE"  layoutX="250.0" layoutY="26.0" size="2em" />
+                    <FontAwesomeIcon  fx:id="iconOS" glyphName="DESKTOP" layoutX="14.0" layoutY="24.0" size="1.5em" />
+                    <FontAwesomeIcon glyphName="USER" layoutX="15.0" layoutY="151.0" size="1.5em" />
+                    <Label fx:id="label" layoutX="42.0" layoutY="136.0" text="Label" />
+                    
+                  
+                                                     
+                </children>
+            </Pane> 
+        </children>
+
+    </AnchorPane>
