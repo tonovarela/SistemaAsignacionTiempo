@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLRenovarTiempoController">
+   <children>      
+      <ComboBox fx:id="combo" layoutX="64.0" layoutY="205.0" onAction="#HabilitarBtnAgregarTiempo" prefHeight="41.0" prefWidth="455.0" promptText="Seleccione una opción, si desea renovarlo" />      
+      <Label fx:id="labelRenovarTiempo" layoutX="61.0" layoutY="116.0" prefHeight="67.0" prefWidth="518.0" text="El tiempo esta por terminar " wrapText="true" />
+    <Button fx:id="ButtonAceptar" disable="true" layoutX="389.0" layoutY="346.0" mnemonicParsing="false" onAction="#AgregarTiempoBtnAction" prefHeight="59.0" prefWidth="180.0" text="Aceptar" />
+      <Button fx:id="ButtonCancelar" defaultButton="true" layoutX="85.0" layoutY="346.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="59.0" prefWidth="180.0" text="No deseo renovar tiempo" />
+   </children>
+</AnchorPane>

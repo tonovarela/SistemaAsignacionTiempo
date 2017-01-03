@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.SAT.Controllers.FXMLMensajeController">
+   <children>
+      <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="72.0" layoutY="75.0" prefHeight="180.0" prefWidth="476.0" text="Etiqueta de Mensaje" textOverrun="CLIP" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="421.0" layoutY="311.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="102.0" text="Aceptar" />
+   </children>
+</AnchorPane>

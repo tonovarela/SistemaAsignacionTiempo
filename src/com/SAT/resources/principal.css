@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: LatoBold;
+    src: url(Lato-Bold.ttf);
+}
+@font-face {
+    font-family: Lato;
+    src: url(Lato-Regular.ttf);
+}
+
+
+#labelCancelarTiempo{
+    -fx-font:30px "Roboto" ;                       
+}
+
+#AnchorPane{
+    -fx-border-width: 2px;   
+    -fx-background-color: transparent;
+
+}
+#labelRenovarTiempo{    
+    -fx-font:30px "Roboto" ;                       
+}
+
+#combo{
+    -fx-font:15px "Roboto" ;                       
+}
+
+#panel{    
+    
+     -fx-background-color: rgba(255,255,255,0.7);
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+
+}
+
+Button{
+    -fx-font-family:"Lato";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;        
+
+}
+
+#user{
+    -fx-font-size:20px
+}
