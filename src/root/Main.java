@@ -48,7 +48,7 @@ public class Main extends Application {
         main.addMouseMotionListener(mml);
         main.setScene(scene);
         frame.pack();
-        frame.setBackground(new java.awt.Color(255, 255,255, 90));
+        frame.setBackground(new java.awt.Color(0, 0,0, 90));
         frame.setLocation(width - 330, 50);
         frame.setVisible(true);
       

@@ -32,11 +32,7 @@ public class FXMLPrincipalController implements Initializable {
 
     
     @FXML
-    private MaterialDesignIcon StatusNet;
-    @FXML
-    private VBox box;
-    @FXML
-    private Label label;
+    private MaterialDesignIcon StatusNet;    
     @FXML
     private FontAwesomeIcon iconOS;
     @FXML 
@@ -63,12 +59,12 @@ public class FXMLPrincipalController implements Initializable {
         System.out.println(String.format("Nombre del usuario [%s]", contexto.getEquipo().getUsername()));
         System.out.println(String.format("Nombre del equipo [%s]", contexto.getEquipo().getHostname()));
        
-        reloj.setTiempo(60);
+        reloj.setTiempo(35);
         iconOS.setGlyphName(contexto.GetOSIconName());
         gauge.LabelProperty().bind(reloj.TiempoLabel);
         gauge.ValueProperty().bind(reloj.TiempoRestantePorcentaje);
 
-        label.textProperty().bind(reloj.TiempoLabel);
+        
       
         
 

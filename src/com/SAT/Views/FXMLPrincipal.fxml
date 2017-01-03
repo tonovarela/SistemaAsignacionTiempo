@@ -20,7 +20,7 @@
             <Pane fx:id="panel" prefHeight="168.0" prefWidth="287.0">
                 <children>
                    <GaugeControl fx:id="gauge" layoutX="56.0" layoutY="6.0" prefHeight="126.0" prefWidth="176.0" />
-                    <Button layoutX="186.0" layoutY="135.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="26.0" prefWidth="97.0" text="Cancelar" textAlignment="RIGHT">                                               
+                    <Button  id="CancelarTiempo" layoutX="186.0" layoutY="135.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="26.0" prefWidth="97.0" text="Cancelar" textAlignment="RIGHT">                                               
                         <graphic>
                             <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
                         </graphic>                        
@@ -29,7 +29,7 @@
                     <MaterialDesignIcon fx:id="StatusNet" glyphName="ETHERNET_CABLE" layoutX="250.0" layoutY="26.0" size="2em" />
                     <FontAwesomeIcon fx:id="iconOS" glyphName="DESKTOP" layoutX="14.0" layoutY="24.0" size="1.5em" />
                     <FontAwesomeIcon glyphName="USER" layoutX="15.0" layoutY="151.0" size="1.5em" />
-                    <Label fx:id="label" layoutX="42.0" layoutY="136.0" text="Label" />
+                    
                     
                   
                                                      
