@@ -1,13 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.SAT.Clases;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package com.SAT.Clases;
 
 /**
  *
@@ -28,7 +20,7 @@ public class MAC implements ISistemaOperativo {
     }
 
     @Override
-    public String getNameIcon() {
+    public String getIconOS() {
         return "APPLE";
     }
     

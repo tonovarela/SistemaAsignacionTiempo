@@ -54,6 +54,7 @@ public class GaugeControl extends VBox {
 
         _gauge.setBarColor(Color.rgb(129, 199, 132));
         _gauge.setBarBackgroundColor(Color.rgb(39, 44, 50));
+        _gauge.setForegroundPaint(Color.RED);
 
         _gauge.setBackgroundPaint(Color.WHITE);
         _gauge.valueProperty().bind(value);

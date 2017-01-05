@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
 <?import de.jensd.fx.glyphs.materialdesign.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.paint.*?>
@@ -13,22 +15,37 @@
 <?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import com.SAT.utils.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="165.0" prefWidth="286.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="168.0" prefWidth="229.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLPrincipalController">
         <children>      
             
    
-            <Pane fx:id="panel" prefHeight="168.0" prefWidth="287.0">
+            <Pane fx:id="panel" prefHeight="168.0" prefWidth="236.0">
                 <children>
-                   <GaugeControl fx:id="gauge" layoutX="56.0" layoutY="6.0" prefHeight="126.0" prefWidth="176.0" />
-                    <Button  id="CancelarTiempo" layoutX="186.0" layoutY="135.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="26.0" prefWidth="97.0" text="Cancelar" textAlignment="RIGHT">                                               
+                   
+                    <GaugeControl fx:id="gauge" layoutX="30.0" layoutY="2.0" prefHeight="160.0" prefWidth="176.0" />
+                    <Button id="ButtonPrincipalSalir" layoutX="184.0" layoutY="135.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="30.0" prefWidth="50.0" textAlignment="RIGHT">                                               
                         <graphic>
-                            <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
-                        </graphic>                        
+                            <FontAwesomeIcon fill="#bf2a28" glyphName="SIGN_OUT" size="1.5em" />
+                        </graphic>
+                        <tooltip>
+                            <Tooltip contentDisplay="TOP" text="Cancelar Tiempo" />
+                        </tooltip>                        
                     </Button>
+                    <Button id="ButtonPrincipalUsuario" fx:id="btnUsuario" layoutX="3.0" layoutY="135.0" mnemonicParsing="false" onAction="#InfoUsuarioBtnAction" prefHeight="30.0" prefWidth="50.0">                                               
+                        <graphic>
+                            <FontAwesomeIcon fill="#2dbcff" glyphName="USER" size="1.5em" textAlignment="LEFT" />
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Informacion de usuario" />
+                        </tooltip>                        
+                    </Button>
+                    <FontAwesomeIcon fx:id="iconOS" fill="#030303" glyphName="WINDOWS" layoutX="8.0" layoutY="20.0" size="1.5em" text="" />
                  
-                    <MaterialDesignIcon fx:id="StatusNet" glyphName="ETHERNET_CABLE" layoutX="250.0" layoutY="26.0" size="2em" />
-                    <FontAwesomeIcon fx:id="iconOS" glyphName="DESKTOP" layoutX="14.0" layoutY="24.0" size="1.5em" />
-                    <FontAwesomeIcon glyphName="USER" layoutX="15.0" layoutY="151.0" size="1.5em" />
+                    <MaterialDesignIcon fx:id="statusNet" fill="#0a0a0a" glyphName="WIFI" layoutX="205.0" layoutY="21.0" size="1.5em" />                    
+                    
+                    <Label fx:id="lblLugarEquipo" layoutX="30.0" layoutY="6.0" text="LugarEquipo" textFill="#030303" />
+<!--            <Label fx:id="lblTiempo" alignment="CENTER" layoutX="29.0" layoutY="48.0" prefHeight="65.0" prefWidth="179.0" text="0:00" textFill="WHITE" textOverrun="CLIP" />-->
+            
                     
                     
                   

@@ -20,20 +20,29 @@ public class FXMLRenovarTiempoController implements Initializable {
     @FXML 
     private ButtonRenovar btn10minutos;
     
+    
+    private Contexto contexto;
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {        
-     int tiempoPermitido=20;         
-     btn10minutos.SetTiempoPermitido(tiempoPermitido, 10);
-     btn30minutos.SetTiempoPermitido(tiempoPermitido, 30);
-     btn60minutos.SetTiempoPermitido(tiempoPermitido, 60);
-     btn90minutos.SetTiempoPermitido(tiempoPermitido, 90); 
+    public void initialize(URL url, ResourceBundle rb) { 
+     contexto=Contexto.getInstance();
+     contexto.setRenovandoTiempo(true);
+     
+     int tiempoPermitido=contexto.getInfoAsignacion().TiempoMaximoServicio().getValue();       
+     
+          
+     btn10minutos.SetTiempoMaximoServicio(tiempoPermitido, 10);
+     btn30minutos.SetTiempoMaximoServicio(tiempoPermitido, 30);
+     btn60minutos.SetTiempoMaximoServicio(tiempoPermitido, 60);
+     btn90minutos.SetTiempoMaximoServicio(tiempoPermitido, 90); 
    
        
     }
     
     @FXML
     private void CancelarBtnAction(ActionEvent event) {
-        Contexto.getInstance().CerrarStage(event);
+        contexto.setRenovandoTiempo(false);
+        contexto.CerrarStage(event);             
     }
     
     

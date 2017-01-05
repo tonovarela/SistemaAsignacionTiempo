@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.IOException;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,9 +28,14 @@ import javax.swing.JFrame;
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage)  {
       
-        Parent root = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
+        Parent root=null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLPrincipal.fxml"));
+        } catch (IOException ex) {
+            System.out.println("Exception "+ex);
+        }
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int width = dim.width;
         Scene scene = new Scene(root);
@@ -50,6 +58,8 @@ public class Main extends Application {
         frame.pack();
         frame.setBackground(new java.awt.Color(0, 0,0, 90));
         frame.setLocation(width - 330, 50);
+        
+      
         frame.setVisible(true);
       
     }

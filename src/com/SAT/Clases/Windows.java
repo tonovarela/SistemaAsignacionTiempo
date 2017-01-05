@@ -1,7 +1,5 @@
 package com.SAT.Clases;
 
-import java.io.IOException;
-
 /**
  *
  * @author tonovarela
@@ -11,7 +9,7 @@ public class Windows implements ISistemaOperativo {
     
     @Override
     public void CerrarSesion() {
-        System.out.println("Cerrar Sesión");
+        System.out.println("Cerrar Sesión en windows");
 //        try {
 //            System.out.println("Cerrando sesion en Windows");            
 //            Runtime.getRuntime().exec("shutdown -l -f");
@@ -21,8 +19,8 @@ public class Windows implements ISistemaOperativo {
         
     }
     @Override
-    public String getNameIcon() {
-        return "WINDOWS";
+    public String getIconOS() {
+        return "APPLE";
     }
 
 }

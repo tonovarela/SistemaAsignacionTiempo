@@ -21,16 +21,38 @@
     -fx-background-color: rgba(255,255,255,0.7);
     -fx-border-color: gray;
     -fx-border-width: 1px;
- 
+
 
 }
-#CancelarTiempo{    
-    -fx-background-radius: 10px;        
+#ButtonPrincipalSalir{    
+
+    -fx-padding: 0px;
+    -fx-border-width:1px;
+    -fx-border-color:#a94442;
+}
+
+#ButtonPrincipalSalir:hover {
+    -fx-background-color:#f2dede;
+    -fx-text-fill:#a94442;
+    
+}
+
+#ButtonPrincipalUsuario{    
+
+    -fx-padding: 0px;
+    -fx-border-width:1px;
+    -fx-border-color:#31708f;
+}
+
+#ButtonPrincipalUsuario:hover {
+    -fx-background-color:#d9edf7;
+    -fx-text-fill:#31708f;
+    
 }
 
 #AnchorModal{ 
     -fx-background-color: white;
-  
+
 }
 
 #labelCancelarTiempo{
@@ -48,21 +70,29 @@
 Button{
     -fx-font-size:12px;
     -fx-background-color: #fff;
+    
     -fx-border-color: #ccc;
     -fx-border-radius: 10px;
+    -fx-background-radius:100px; 
     -fx-border-width:2px;
+    
 
 
 }
 
-#user{
-    -fx-font-size:20px
+#cabecera{
+    -fx-background-color: #4f5b66;
+
+}
+#lblLugarEquipo{
+    -fx-font-family: "Roboto";
 }
 
-#combo .list-cell
- {
-  -fx-padding: 0 0 0 30px;
- }
-
+#lblTiempo{
+    -fx-font-family: "Roboto";
+    -fx-font-size:60px;
+    
+    
+}
 
 

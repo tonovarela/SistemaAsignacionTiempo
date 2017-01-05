@@ -12,7 +12,7 @@ package com.SAT.Clases;
 public interface ISistemaOperativo {
 
     
-    public String getNameIcon();
+    public String getIconOS();
     public void CerrarSesion();
 
 }

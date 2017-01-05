@@ -1,6 +1,6 @@
 package com.SAT.Clases;
 
-import com.SAT.Model.Equipo;
+import com.SAT.Model.InfoAsignacion;
 import com.SAT.utils.StageModal;
 import java.io.IOException;
 import javafx.event.ActionEvent;
@@ -13,14 +13,14 @@ import javafx.stage.Stage;
 
 public class Contexto {
 
-    private static Contexto contexto = new Contexto();
+    private static Contexto contexto;
     private final Centinela _centinela;
     private final Reloj _reloj;
     private final Equipo _equipo;
-
-    private ISistemaOperativo _sistemaOperativo;
+    private final InfoAsignacion _infoAsignacion;
 
     private boolean _cancelandoTiempo = false;
+    private boolean _renovandoTiempo = false;
 
     public static Contexto getInstance() {
         if (contexto == null) {
@@ -30,21 +30,18 @@ public class Contexto {
     }
 
     public Contexto() {
-        _reloj = new Reloj();
-        this._centinela = new Centinela();
-
-        String OS = System.getProperty("os.name").toLowerCase();
-        if (OS.contains("win")) {
-            this._sistemaOperativo = new Windows();
-        }
-        if (OS.contains("nux")) {
-            this._sistemaOperativo = new Linux();
-        }
-        if (OS.contains("mac") || OS.contains("darwin")) {
-            this._sistemaOperativo = new MAC();
-        }
 
         _equipo = new Equipo();
+
+        _reloj = new Reloj();
+        this._centinela = new Centinela();
+        this._infoAsignacion = new InfoAsignacion();        
+        this._infoAsignacion.Nombre().setValue("Marco Antonio Varela");
+        this._infoAsignacion.LugarEquipoAsignado().setValue("10");
+        this._infoAsignacion.TiempoAsignado().setValue(150);
+        this._infoAsignacion.TiempoMaximoServicio().setValue(50);
+        this._infoAsignacion.TiempoServicio().setValue(8655);
+        this._infoAsignacion.Usuario().setValue(_equipo.getUsername());
 
     }
 
@@ -60,42 +57,28 @@ public class Contexto {
         return _equipo;
     }
 
-    public boolean isCancelandoTiempo() {
-        return _cancelandoTiempo;
+    public InfoAsignacion getInfoAsignacion() {
+        return _infoAsignacion;
     }
 
-    public void setCancelandoTiempo(boolean _cancelandoTiempo) {
-        this._cancelandoTiempo = _cancelandoTiempo;
-    }
+    public Stage getStage(String vista) {
 
-    public Stage getStageRenovarTiempo() {
         Stage stage = new StageModal();
-        Parent parentRenovarTiempo = null;
+        Parent parent = null;
         try {
-            parentRenovarTiempo = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLRenovarTiempo.fxml"));
-        } catch (IOException ex) {
-            System.out.println("No se puede cargar la vista de CancelarTiempo");
-        }
-        Scene SceneModalRenovacionTiempo = new Scene(parentRenovarTiempo);
-        stage.setScene(SceneModalRenovacionTiempo);
-        return stage;
-    }
+            parent = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXML" + vista + ".fxml"));
 
-    public Stage getStageCancelarTiempo() {
-        Stage stage = new StageModal();
-        Parent parentCancelarTiempo = null;
-        try {
-            parentCancelarTiempo = FXMLLoader.load(getClass().getResource("/com/SAT/Views/FXMLCancelarTiempo.fxml"));
         } catch (IOException ex) {
-            System.out.println("No se puede cargar la vista de RenovarTiempo");
+            System.out.println("No se puede cargar la vista" + ex);
         }
-        Scene SceneModalCancelacionTiempo = new Scene(parentCancelarTiempo);
-        stage.setScene(SceneModalCancelacionTiempo);
+        Scene SceneModal = new Scene(parent);
+        stage.setScene(SceneModal);
         return stage;
+
     }
 
     public String GetOSIconName() {
-        return this._sistemaOperativo.getNameIcon();
+        return this._equipo.getIconOS();
     }
 
     public void CerrarStage(ActionEvent e) {
@@ -103,7 +86,23 @@ public class Contexto {
     }
 
     public void CerrarSesion() {
-        this._sistemaOperativo.CerrarSesion();
+        this._equipo.CerrarSesion();
+    }
+
+    public boolean isCancelandoTiempo() {
+        return _cancelandoTiempo;
+    }
+
+    public void setCancelandoTiempo(boolean CancelandoTiempo) {
+        this._cancelandoTiempo = CancelandoTiempo;
+    }
+
+    public boolean isRenovandoTiempo() {
+        return _renovandoTiempo;
+    }
+
+    public void setRenovandoTiempo(boolean RenovandoTiempo) {
+        this._renovandoTiempo = RenovandoTiempo;
     }
 
 }

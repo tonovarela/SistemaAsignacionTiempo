@@ -8,25 +8,24 @@ import javafx.scene.control.Button;
  */
 public class ButtonRenovar extends Button {
 
-    private int _tiempo;
+    private int _tiempoRepresentado;
 
     public ButtonRenovar() {
         super();
-
     }
 
-    public void SetTiempoPermitido(int tiempoPermitido, int tiempo) {
-        this._tiempo = tiempo;
-        if (tiempoPermitido >= tiempo) {
+    public void SetTiempoMaximoServicio(int tiempoMaximo, int tiempoRepresentado) {
+        this._tiempoRepresentado = tiempoRepresentado;
+        if (tiempoMaximo >= tiempoRepresentado) {
             this.setDisable(false);
         } else {
             this.setDisable(true);
         }
-        this.setOnAction(new EventHandlerImpl());
+        this.setOnAction(new EventoRenovarTiempo());
     }
 
-    public int getTiempo() {
-        return _tiempo;
+    public int getTiempoRepresentado() {
+        return _tiempoRepresentado;
     }
 
 }

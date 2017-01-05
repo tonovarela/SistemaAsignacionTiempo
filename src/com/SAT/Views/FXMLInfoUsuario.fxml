@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@../resources/infoUsuario.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLInfoUsuarioController">
+    
+   <children>
+      <FontAwesomeIcon fill="#2dbcff" glyphName="USER" layoutX="483.0" layoutY="166.0" lineSpacing="2.0" size="11em" wrappingWidth="115.28571319580078" />
+      <Label fx:id="LabelNombreUsuario" layoutX="32.0" layoutY="258.0" prefHeight="58.0" prefWidth="627.0" text="Marco Antonio Estelles Martínez" />
+      <Label fx:id="LabelMinutosServicio" layoutX="33.0" layoutY="316.0" prefHeight="58.0" prefWidth="582.0" text="Te quedan $ minutos de servicio" />
+      <Label fx:id="LabelUsuario" layoutX="35.0" layoutY="207.0" prefHeight="40.0" prefWidth="282.0" text="406073150" />
+      <Button layoutX="497.0" layoutY="401.0" mnemonicParsing="false" onAction="#CerrarBtnAction" prefHeight="51.0" prefWidth="109.0" text="Cerrar" />
+   </children>
+</AnchorPane>

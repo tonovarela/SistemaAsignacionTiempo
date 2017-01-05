@@ -17,7 +17,7 @@ public class Linux implements ISistemaOperativo {
     }
 
     @Override
-    public String getNameIcon() {
+    public String getIconOS() {
         return "LINUX";
     }
 

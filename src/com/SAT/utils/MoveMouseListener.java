@@ -33,7 +33,7 @@ public class MoveMouseListener implements MouseListener, MouseMotionListener {
     Point getScreenLocation(MouseEvent e) {
         Point cursor = e.getPoint();
         Point target_location = this.target.getLocationOnScreen();
-        System.out.println(cursor.getX());
+      
         return new Point((int) (target_location.getX() + cursor.getX()),
                 (int) (target_location.getY() + cursor.getY()));
     }
@@ -66,15 +66,17 @@ public class MoveMouseListener implements MouseListener, MouseMotionListener {
     }
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-        Point current = this.getScreenLocation(e);
+    public void mouseDragged(MouseEvent e) {        
+        Point current = this.getScreenLocation(e);       
         Point offset = new Point((int) current.getX() - (int) start_drag.getX(),
                 (int) current.getY() - (int) start_drag.getY());
         JFrame frame = this.getFrame(target);
         Point new_location = new Point(
                 (int) (this.start_loc.getX() + offset.getX()), (int) (this.start_loc
-                .getY() + offset.getY()));
-        frame.setLocation(new_location);
+                .getY() + offset.getY()));                  
+            frame.setLocation(new_location);
+        
+        
     }
 
     @Override
