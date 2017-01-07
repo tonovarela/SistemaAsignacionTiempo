@@ -20,7 +20,7 @@ public class Windows implements ISistemaOperativo {
     }
     @Override
     public String getIconOS() {
-        return "APPLE";
+        return "WINDOWS";
     }
 
 }

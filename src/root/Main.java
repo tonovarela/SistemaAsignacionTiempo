@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;

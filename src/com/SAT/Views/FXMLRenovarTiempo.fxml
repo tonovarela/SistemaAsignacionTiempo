@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import com.SAT.utils.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLRenovarTiempoController">
+<AnchorPane id="AnchorModal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@../resources/principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SAT.Controllers.FXMLRenovarTiempoController">
    <children>            
       <Label id="labelRenovarTiempo" layoutX="130.0" layoutY="106.0" prefHeight="67.0" prefWidth="430.0" text="El tiempo esta por terminar " wrapText="true" />     
       <Button defaultButton="true" layoutX="151.0" layoutY="374.0" mnemonicParsing="false" onAction="#CancelarBtnAction" prefHeight="74.0" prefWidth="291.0" text="No deseo renovar tiempo" />

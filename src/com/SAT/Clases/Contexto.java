@@ -1,8 +1,14 @@
 package com.SAT.Clases;
 
+import com.SAT.Controllers.FXMLMensajeController;
 import com.SAT.Model.InfoAsignacion;
 import com.SAT.utils.StageModal;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,9 +24,12 @@ public class Contexto {
     private final Reloj _reloj;
     private final Equipo _equipo;
     private final InfoAsignacion _infoAsignacion;
+    private final AzureServiceBusClient _azureServiceBusClient;
+    private final Timer _monitorMensajes;
 
     private boolean _cancelandoTiempo = false;
     private boolean _renovandoTiempo = false;
+    private boolean _mostrandoInfoUsuario = false;
 
     public static Contexto getInstance() {
         if (contexto == null) {
@@ -32,16 +41,17 @@ public class Contexto {
     public Contexto() {
 
         _equipo = new Equipo();
-
         _reloj = new Reloj();
         this._centinela = new Centinela();
-        this._infoAsignacion = new InfoAsignacion();        
+        this._infoAsignacion = new InfoAsignacion();
         this._infoAsignacion.Nombre().setValue("Marco Antonio Varela");
         this._infoAsignacion.LugarEquipoAsignado().setValue("10");
-        this._infoAsignacion.TiempoAsignado().setValue(150);
-        this._infoAsignacion.TiempoMaximoServicio().setValue(50);
-        this._infoAsignacion.TiempoServicio().setValue(8655);
+        this._infoAsignacion.TiempoAsignado().setValue(40);
+        this._infoAsignacion.setMaxRenovacionPermitido(30);
+        this._infoAsignacion.TiempoServicioRestante().setValue(3200);
         this._infoAsignacion.Usuario().setValue(_equipo.getUsername());
+        _azureServiceBusClient = new AzureServiceBusClient();
+        _monitorMensajes = new Timer();
 
     }
 
@@ -51,6 +61,14 @@ public class Contexto {
 
     public Centinela getCentinela() {
         return _centinela;
+    }
+
+    public Timer getMonitorMensajes() {
+        return _monitorMensajes;
+    }
+
+    public AzureServiceBusClient getAzureServiceBusClient() {
+        return _azureServiceBusClient;
     }
 
     public Equipo getEquipo() {
@@ -103,6 +121,14 @@ public class Contexto {
 
     public void setRenovandoTiempo(boolean RenovandoTiempo) {
         this._renovandoTiempo = RenovandoTiempo;
+    }
+
+    public boolean isMostrandoInfoUsuario() {
+        return _mostrandoInfoUsuario;
+    }
+
+    public void setMostrandoInfoUsuario(boolean mostrandoInfoUsuario) {
+        this._mostrandoInfoUsuario = mostrandoInfoUsuario;
     }
 
 }

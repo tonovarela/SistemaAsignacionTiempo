@@ -34,8 +34,8 @@ public class FXMLInfoUsuarioController implements Initializable {
         String minutosServicio;
         contexto = Contexto.getInstance();
         InfoAsignacion infoAsignacion = contexto.getInfoAsignacion();
-        minutosServicio = String.format("Te quedan %d minutos de servicio", infoAsignacion.TiempoServicio().getValue());
-
+        minutosServicio = String.format("Te quedan %d minutos de servicio", infoAsignacion.TiempoServicioRestante().getValue());
+        
         LabelUsuario.textProperty().bind(infoAsignacion.Usuario());
         LabelNombreUsuario.textProperty().bind(infoAsignacion.Nombre());
         LabelMinutosServicio.textProperty().set(minutosServicio);
@@ -44,6 +44,7 @@ public class FXMLInfoUsuarioController implements Initializable {
 
     @FXML
     private void CerrarBtnAction(ActionEvent event) {
+        contexto.setMostrandoInfoUsuario(false);
         contexto.CerrarStage(event);
     }
 

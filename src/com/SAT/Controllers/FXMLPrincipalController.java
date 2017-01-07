@@ -1,5 +1,6 @@
 package com.SAT.Controllers;
 
+import com.SAT.Clases.AzureServiceBusClient;
 import com.SAT.Clases.Centinela;
 import com.SAT.Clases.Contexto;
 import com.SAT.Clases.Reloj;
@@ -9,6 +10,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.materialdesign.MaterialDesignIcon;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -49,7 +51,8 @@ public class FXMLPrincipalController implements Initializable {
         reloj.setTiempo(infoAsignacion.TiempoAsignado().getValue());
 
         Centinela centinela = contexto.getCentinela();
-
+        AzureServiceBusClient azureServiceBusClient = contexto.getAzureServiceBusClient();
+        Timer monitorMensajes = contexto.getMonitorMensajes();
         /*Bindings------------------------------------ */
         iconOS.setGlyphName(contexto.GetOSIconName());
         lblLugarEquipo.textProperty().bind(infoAsignacion.LugarEquipoAsignado());
@@ -64,28 +67,37 @@ public class FXMLPrincipalController implements Initializable {
                     if (centinela.estaConectado()) {
                         statusNet.setGlyphName("WIFI");
                         statusNet.setFill(Color.BLACK);
-                        if (reloj.getTiempoRestante() == 30 && !contexto.isCancelandoTiempo()) {
-
-                            if (!(infoAsignacion.TiempoMaximoServicio().getValue() <= 10)) {
-                                contexto.getStage("RenovarTiempo").show();
-                            }
+                        if (reloj.getTiempoRestante() == 30 && !contexto.isCancelandoTiempo() && !(infoAsignacion.getMaxRenovacionPermitido() < 10)) {
+                            contexto.getStage("RenovarTiempo").show();
+                        }
+                        if (!(azureServiceBusClient.hayMensajes())) {
+                            contexto.getStage("Mensaje").show();
                         }
 
                     } else {
                         statusNet.setGlyphName("WIFI_OFF");
                         statusNet.setFill(Color.RED);
                     }
+
                     if (reloj.getTiempoRestante() == 0) {
+                        azureServiceBusClient.BorrarSuscripcion();
+                        monitorMensajes.cancel();
                         contexto.CerrarSesion();
                         Platform.exit();
                         System.exit(0);
                     }
-                    System.out.println("Se monitorea el ServiceBusChat");
 
                 })
         );
         _timeline.setCycleCount(Animation.INDEFINITE);
         _timeline.play();
+        azureServiceBusClient.Conectarse("testvarela1",//Namespace
+                "RootManageSharedAccessKey",//Politicas de acceso
+                "xPc9YM9F5m344YYjoXdisFw/TeK4p8cTw2EJGZWlVEQ=",//Key
+                "varela",//Topico
+                "abel"//Suscriptor
+        );
+        monitorMensajes.scheduleAtFixedRate(azureServiceBusClient, 1, 1000);
 
     }
 
@@ -98,7 +110,10 @@ public class FXMLPrincipalController implements Initializable {
 
     @FXML
     private void InfoUsuarioBtnAction(ActionEvent event) {
-           contexto.getStage("InfoUsuario").show();
+        if (!contexto.isCancelandoTiempo() && !contexto.isRenovandoTiempo() && !contexto.isMostrandoInfoUsuario()) {
+            contexto.setMostrandoInfoUsuario(true);
+            contexto.getStage("InfoUsuario").show();
+        }
     }
 
 }

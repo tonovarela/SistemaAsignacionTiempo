@@ -28,8 +28,9 @@ public class FXMLRenovarTiempoController implements Initializable {
      contexto=Contexto.getInstance();
      contexto.setRenovandoTiempo(true);
      
-     int tiempoPermitido=contexto.getInfoAsignacion().TiempoMaximoServicio().getValue();       
-     
+
+     int tiempoPermitido=contexto.getInfoAsignacion().getMaxRenovacionPermitido();
+                  
           
      btn10minutos.SetTiempoMaximoServicio(tiempoPermitido, 10);
      btn30minutos.SetTiempoMaximoServicio(tiempoPermitido, 30);

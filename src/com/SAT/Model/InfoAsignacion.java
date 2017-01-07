@@ -15,25 +15,39 @@ public class InfoAsignacion {
     private final StringProperty _nombre;
     private final StringProperty _lugarEquipoAsignado;
     private final IntegerProperty _tiempoAsignado;
-    private final IntegerProperty _tiempoServicio;
-    private final IntegerProperty _tiempoMaxServicio;
+    private final IntegerProperty _tiempoServicioRestante;
+    private final IntegerProperty _maxRenovacionServicio;
 
     public InfoAsignacion() {
         this._nombre = new SimpleStringProperty();
         this._lugarEquipoAsignado = new SimpleStringProperty();
         this._tiempoAsignado = new SimpleIntegerProperty();
-        this._tiempoServicio = new SimpleIntegerProperty();
-        this._tiempoMaxServicio = new SimpleIntegerProperty();
+        this._tiempoServicioRestante = new SimpleIntegerProperty();
+        this._maxRenovacionServicio = new SimpleIntegerProperty();
         this._usuario = new SimpleStringProperty();
     }
-
 
     public StringProperty Usuario() {
         return this._usuario;
     }
 
-    public IntegerProperty TiempoMaximoServicio() {
-        return this._tiempoMaxServicio;
+    public void setMaxRenovacionPermitido(int value) {
+        this._maxRenovacionServicio.setValue(value);
+    }
+
+    public int getMaxRenovacionPermitido() {
+        int max = 90;//Maximo 90 minutos de servicio permitido 
+        int a = this._maxRenovacionServicio.get();
+        int b = this._tiempoServicioRestante.get();
+
+        if (a <= max  && b>=a ) 
+            return a;        
+        else
+            return b;                      
+    }
+
+    public IntegerProperty TiempoServicioRestante() {
+        return this._tiempoServicioRestante;
     }
 
     public StringProperty Nombre() {
@@ -46,10 +60,6 @@ public class InfoAsignacion {
 
     public IntegerProperty TiempoAsignado() {
         return this._tiempoAsignado;
-    }
-
-    public IntegerProperty TiempoServicio() {
-        return this._tiempoServicio;
     }
 
 }
